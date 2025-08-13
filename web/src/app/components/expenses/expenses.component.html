@@ -1,0 +1,19 @@
+<h2>Expenses</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>User ID</th>
+    <th>Category ID</th>
+    <th>Amount</th>
+    <th>Description</th>
+    <th>Created At</th>
+  </tr>
+  <tr *ngFor="let expense of expenses">
+    <td>{{ expense.id }}</td>
+    <td>{{ expense.user_id }}</td>
+    <td>{{ expense.category_id }}</td>
+    <td>{{ expense.amount }}</td>
+    <td>{{ expense.description }}</td>
+    <td>{{ expense.created_at | date:'short' }}</td>
+  </tr>
+</table>
