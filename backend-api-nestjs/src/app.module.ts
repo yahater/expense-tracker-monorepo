@@ -1,22 +1,20 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { ConfigModule } from '@nestjs/config';
+import { CategoriesController } from './categories.controller';
+import { CategoriesService } from './categories.service';
+import { SupabaseService } from './supabase.service';
+import { UsersService } from './users.service';
+import { UsersController } from './users.controller';
+import { ExpensesController } from './expenses.controller';
+import { ExpensesService } from './expenses.service';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true, // Makes env variables available everywhere
+    }),
+  ],
+  controllers: [UsersController, CategoriesController, ExpensesController],
+  providers: [SupabaseService, UsersService, CategoriesService, ExpensesService],
 })
 export class AppModule {}
-
-TypeOrmModule.forRoot({
-  type: 'postgres',
-  host: 'db.rcdbdpqnbtilpczjikox.supabase.co',
-  port: 5432,
-  username: 'postgres',
-  password: 'Whitecloud13.',
-  database: 'postgres',
-  autoLoadEntities: true,
-  synchronize: true,
-}),
-
