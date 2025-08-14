@@ -1,12 +1,12 @@
 // src/app/app.component.ts
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, RouterLink, CommonModule], // Added RouterLink here
   template: `
     <div class="app-container">
       <nav class="navbar">
@@ -57,10 +57,15 @@ import { CommonModule } from '@angular/common';
       padding: 0.5rem 1rem;
       border-radius: 0.25rem;
       transition: background-color 0.2s;
+      cursor: pointer;
     }
     
     .nav-links a:hover {
       background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-links a.active {
+      background: rgba(255, 255, 255, 0.2);
     }
     
     .main-content {
