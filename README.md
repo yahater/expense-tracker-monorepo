@@ -1,1 +1,11 @@
 # Expense Tracker Monorepo 
+npm run install:all
+
+make .env in Backend-api-nestjs with following contents:
+SUPABASE_URL=https://rcdbdpqnbtilpczjikox.supabase.co
+SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJjZGJkcHFuYnRpbHBjemppa294Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1NDU2OTUwNywiZXhwIjoyMDcwMTQ1NTA3fQ.Gji2X_wfrYlCGImiKTX5b3cIEkc36o0sP5jCwASXLfg
+
+
+cd web
+export CI=true
+ng serve

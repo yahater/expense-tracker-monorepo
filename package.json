@@ -1,0 +1,13 @@
+{
+    "name": "nestjs-angular-app",
+    "scripts": {
+      "install:all": "cd backend-api-nestjs && npm install && cd ../web && npm install",
+      "build:frontend": "cd web && npm run build",
+      "start:dev": "concurrently \"cd backend-api-nestjs && npm run start:dev\" \"cd web && npm start\"",
+      "start:prod": "cd backend-api-nestjs && npm run start:prod"
+    },
+    "devDependencies": {
+      "concurrently": "^8.2.0"
+    }
+}
+  
